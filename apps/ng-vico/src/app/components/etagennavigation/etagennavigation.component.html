@@ -1,0 +1,11 @@
+<div class="flex">
+  <button
+    mat-mini-fab
+    color="primary"
+    *ngFor="let etage of etagen | keyvalue"
+    (click)="selectedEtage = etage.key; etageEvent.emit(etage.key)"
+    [disabled]="selectedEtage === etage.key"
+  >
+    {{ etage.value }}
+  </button>
+</div>

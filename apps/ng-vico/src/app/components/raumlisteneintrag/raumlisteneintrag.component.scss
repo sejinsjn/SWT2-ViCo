@@ -1,0 +1,36 @@
+.raumnr {
+  width: 5em;
+}
+
+.raumbelegung {
+  width: 3em;
+  font-weight: 500;
+}
+
+.listeneintrag {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5em;
+}
+
+.red {
+  color: #e3582c;
+}
+
+.yellow {
+  color: #ecce2f;
+}
+
+.green {
+  color: #54b74c;
+}
+
+mat-divider {
+  border-color: #747474;
+}
+
+span {
+  display: inline-block;
+  font-size: 2em;
+}

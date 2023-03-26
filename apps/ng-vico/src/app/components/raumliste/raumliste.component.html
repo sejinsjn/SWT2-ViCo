@@ -1,0 +1,54 @@
+<div class="flexbox flex-direction-column liste">
+  <ng-container
+    *ngIf="raeume !== undefined && raeume.length !== 0; else loading"
+  >
+    <div class="flexbox justify-content-space-between">
+      <mat-button-toggle-group multiple>
+        <mat-button-toggle
+          class="background-color-white"
+          (click)="sortByCriterion(sortCriterion.NAME)"
+        >
+          <div class="flexbox flex-wrap justify-content-center">
+            <div class="flexbox flex-direction-column justify-content-center">
+              <span class="material-icons keyboard_arrow_up"
+                >keyboard_arrow_up
+              </span>
+              <span class="material-icons keyboard_arrow_down"
+                >keyboard_arrow_down
+              </span>
+            </div>
+            Name
+          </div>
+        </mat-button-toggle>
+        <mat-button-toggle
+          class="background-color-white"
+          (click)="sortByCriterion(sortCriterion.BELEGUNG)"
+        >
+          <div class="flexbox flex-wrap justify-content-center">
+            <div class="flexbox flex-direction-column justify-content-center">
+              <span class="material-icons keyboard_arrow_up"
+                >keyboard_arrow_up
+              </span>
+              <span class="material-icons keyboard_arrow_down"
+                >keyboard_arrow_down
+              </span>
+            </div>
+            Belegung
+          </div>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+      <button mat-button (click)="emitRefreshEvent()">
+        <span class="material-icons"> refresh </span>
+      </button>
+    </div>
+    <swt2-raumlisteneintrag
+      class="flexbox flex-direction-column"
+      *ngFor="let raum of raeume"
+      [raum]="raum"
+    ></swt2-raumlisteneintrag>
+    <mat-divider></mat-divider>
+  </ng-container>
+  <ng-template #loading>
+    <mat-spinner diameter="50"></mat-spinner>
+  </ng-template>
+</div>

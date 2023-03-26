@@ -1,0 +1,13 @@
+<mat-divider></mat-divider>
+<div class="listeneintrag">
+  <span class="raumnr">{{ raum.raumNr }}</span>
+  <span
+    class="raumbelegung"
+    [ngClass]="{
+      red: raum.besucherAnzahl / raum.maxAnzahl <= 1.0,
+      yellow: raum.besucherAnzahl / raum.maxAnzahl <= 0.8,
+      green: raum.besucherAnzahl / raum.maxAnzahl <= 0.5
+    }"
+    >{{ raum.besucherAnzahl }}/{{ raum.maxAnzahl }}</span
+  >
+</div>

@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "projects": {
+    "ng-vico": "apps/ng-vico",
+    "ng-vico-e2e": "apps/ng-vico-e2e",
+    "spring-vico": "apps/spring-vico"
+  },
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json"
+}

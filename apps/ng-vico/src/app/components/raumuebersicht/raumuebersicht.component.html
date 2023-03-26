@@ -1,0 +1,11 @@
+<swt2-etagennavigation
+  (etageEvent)="selectedEtage = $event; refreshRaeume()"
+></swt2-etagennavigation>
+<swt2-raumplan-etage [selectedEtage]="selectedEtage"></swt2-raumplan-etage>
+<swt2-raumliste
+  [selectedEtage]="selectedEtage"
+  [raeume]="raeumeByEtage.get(selectedEtage)"
+  (orderEvent)="order = $event"
+  (sortCriterionEvent)="sortRaeumeByCriterion($event)"
+  (refreshEvent)="refreshRaeume()"
+></swt2-raumliste>

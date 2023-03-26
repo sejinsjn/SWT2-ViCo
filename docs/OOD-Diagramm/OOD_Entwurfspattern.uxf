@@ -1,0 +1,134 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>7</zoom_level><element><id>UMLClass</id><coordinates><x>840</x><y>336</y><w>147</w><h>70</h></coordinates><panel_attributes>MongoDB
+--
+
+--
+initDatabase()
+- readCSV()
+- getMissingRaeume()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>413</x><y>343</y><w>154</w><h>91</h></coordinates><panel_attributes>Raum
+--
+- id
+- raumNr
+- name
+- besucherAnzahl
+- maxAnzahl
+--
++ toString()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>224</x><y>371</y><w>154</w><h>42</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+Serializable
+Package: java.io
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>371</x><y>378</y><w>56</w><h>28</h></coordinates><panel_attributes>lt=&lt;&lt;.
+</panel_attributes><additional_attributes>10;20;60;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>231</x><y>238</y><w>154</w><h>49</h></coordinates><panel_attributes>SensorDaten
+--
+- besucherAnzahl
+--
++ toString()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>742</x><y>476</y><w>210</w><h>105</h></coordinates><panel_attributes>template=Raum, Integer
+&lt;&lt;interface&gt;&gt;
+SensorRepository
+--
+
+--
+findByEtage()
+finByRaumNr()
+findAllByRaumNr()
+findByBesucherAnzalGreaterThan()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>952</x><y>497</y><w>126</w><h>56</h></coordinates><panel_attributes>template=T, ID
+&lt;&lt;interface&gt;&gt;
+MongoRepository
+Package: java.io</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>910</x><y>518</y><w>56</w><h>28</h></coordinates><panel_attributes>lt=&lt;&lt;.
+</panel_attributes><additional_attributes>60;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>595</x><y>28</y><w>175</w><h>105</h></coordinates><panel_attributes>SensorServiceImpl
+--
+
+--
++ addBesucher()
++ getAll()
++ findByEtage()
++ findByRaumNr()
++ findAllByRaumNr()
++ finByBesucherAnzahlGreaterThan()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>588</x><y>168</y><w>203</w><h>119</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+ISensorService
+--
+
+--
+addBesucher()
+getAll()
+findByEtage()
+findByRaumNr()
+getRaeumeFromEtage();
+updateCache();
+createEtagenManager();</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>679</x><y>126</y><w>21</w><h>56</h></coordinates><panel_attributes>lt=&lt;&lt;.
+</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>364</x><y>49</y><w>203</w><h>63</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+MqttCallback
+
+Package: 
+package org.eclipse.paho.client.mqttv3;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>462</x><y>105</y><w>21</w><h>77</h></coordinates><panel_attributes>lt=&lt;&lt;.
+</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>413</x><y>168</y><w>112</w><h>126</h></coordinates><panel_attributes>MessageHandler
+--
+- json
+- client 
+--
++ MessageHandler()
++ connectionLost()
++ messageArrived()
++ deliveryComplete()
+- connectToMQTT()
+- updateRaumm()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>840</x><y>189</y><w>147</w><h>70</h></coordinates><panel_attributes>RaumController
+--
+
+--
+all()
+findByEtage(): Raum</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>903</x><y>133</y><w>21</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>784</x><y>77</y><w>259</w><h>63</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+RestController
+
+Package: 
+org.springframework.web.bind.annotation.RestController
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>784</x><y>231</y><w>70</w><h>28</h></coordinates><panel_attributes>lt=&lt;-
+m1=1</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>518</x><y>231</y><w>84</w><h>28</h></coordinates><panel_attributes>lt=&lt;-
+m1=1</panel_attributes><additional_attributes>100;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>301</x><y>175</y><w>126</w><h>77</h></coordinates><panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes><additional_attributes>10;90;10;10;160;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>217</x><y>14</y><w>868</w><h>301</h></coordinates><panel_attributes>Controller
+fg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>1113</x><y>63</y><w>133</w><h>84</h></coordinates><panel_attributes>View
+fg=red
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>217</x><y>329</y><w>518</w><h>364</h></coordinates><panel_attributes>Model
+fg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1127</x><y>84</y><w>105</w><h>49</h></coordinates><panel_attributes>Angular GUI
+
+Zugriff über 
+Rest-Schnitstelle</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>903</x><y>630</y><w>140</w><h>21</h></coordinates><panel_attributes>Model-View-Controller
+fg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>882</x><y>609</y><w>182</w><h>91</h></coordinates><panel_attributes>Legende:</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1036</x><y>98</y><w>91</w><h>21</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>518</x><y>273</y><w>56</w><h>84</h></coordinates><panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes><additional_attributes>40;100;40;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>280</y><w>133</w><h>126</h></coordinates><panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes><additional_attributes>10;150;170;150;170;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>371</x><y>455</y><w>91</w><h>77</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+GetEtageData
+--
+
+--
++ update()
++ getRaeume()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>308</x><y>588</y><w>84</w><h>70</h></coordinates><panel_attributes>Etage
+--
+- etage
+--
++ Etage()
++ update()
++ getRaeume()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>343</x><y>525</y><w>63</w><h>77</h></coordinates><panel_attributes>lt=&lt;&lt;.
+</panel_attributes><additional_attributes>70;10;70;50;10;50;10;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>427</x><y>588</y><w>84</w><h>70</h></coordinates><panel_attributes>EtageProxy
+--
+- etageCache
+--
++ EtageProxy()
++ update()
++ getRaeume()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>427</x><y>525</y><w>56</w><h>77</h></coordinates><panel_attributes>lt=&lt;&lt;.
+</panel_attributes><additional_attributes>10;10;10;50;60;50;60;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>581</x><y>483</y><w>126</w><h>84</h></coordinates><panel_attributes>EtagenManager
+--
+- sensorRepository
+- etagenListe
+--
++ createEtagenManager()
++ getRaumListeFromEtage()
++ updateRaeumeFromEtage()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>455</x><y>490</y><w>140</w><h>49</h></coordinates><panel_attributes>lt=&lt;-
+m1=4</panel_attributes><additional_attributes>10;10;130;10;130;50;180;50</additional_attributes></element><element><id>Relation</id><coordinates><x>455</x><y>427</y><w>98</w><h>70</h></coordinates><panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes><additional_attributes>100;10;100;80;10;80</additional_attributes></element><element><id>UMLNote</id><coordinates><x>266</x><y>441</y><w>455</w><h>231</h></coordinates><panel_attributes>Proxy
+
+fg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>903</x><y>658</y><w>140</w><h>21</h></coordinates><panel_attributes>Proxy Pattern
+fg=blue
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>700</x><y>532</y><w>56</w><h>28</h></coordinates><panel_attributes>lt=&lt;-
+m1=1</panel_attributes><additional_attributes>60;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>735</x><y>280</y><w>112</w><h>217</h></coordinates><panel_attributes>lt=&lt;-
+m1=1</panel_attributes><additional_attributes>130;290;130;240;10;240;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>770</x><y>280</y><w>84</w><h>105</h></coordinates><panel_attributes>lt=&lt;-
+m1=1</panel_attributes><additional_attributes>10;10;10;130;100;130</additional_attributes></element></diagram>
